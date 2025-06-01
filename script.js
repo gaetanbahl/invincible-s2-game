@@ -3,11 +3,12 @@ const message = document.getElementById('message');
 let selected = null;
 
 let layout = [
-  ['A', '', '', '', ''],
-  ['M', '', 'E', '', ''],
-  ['', 'K', 'L', '', ''],
-  ['S', 'A', 'K', 'L', ''],
-  ['', '', '', '', 'e']
+  ['', 'A', '', '', '', ''],
+  ['M', '', '', 'M', 'E', ''],
+  ['', '', 'K', '', 'L', ''],
+  ['S', '', '', '', '', ''],
+  ['A', '', 'K', 'L', '', ''],
+  ['', '', '', '', '', 'E']
 ];
 
 function renderGrid() {
@@ -49,7 +50,7 @@ function handleClick(i, j) {
 function checkWin() {
   const target = 'SELMAK';
   const rows = layout.map(r => r.join('')).join('\n');
-  const cols = [0,1,2,3,4].map(j => layout.map(r => r[j]).join('')).join('\n');
+  const cols = [0,1,2,3,4,5].map(j => layout.map(r => r[j]).join('')).join('\n');
   if (rows.includes(target) && cols.includes(target)) {
     message.textContent = '🎉 Bravo ! Vous avez réussi !';
   } else {
